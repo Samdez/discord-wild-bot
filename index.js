@@ -21,7 +21,7 @@ client.on('ready', () => {
     const seconds = time.getSeconds();
 
 
-    if (hours === 23 && minutes === 14) {
+    if (hours === 23 && minutes === 15) {
       if (!messageHasBeenSent) {
         testChannel.send('Time for the daily meet!');
         messageHasBeenSent = true;
