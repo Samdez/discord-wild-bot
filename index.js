@@ -9,7 +9,7 @@ client.once('ready', () => {
 
 client.on('ready', () => {
   const testChannel = client.channels.cache.find(channel => channel.id === '775074059415060503');
-  
+
   let messageHasBeenSent = false;
 
   const getTime = () => {
@@ -18,22 +18,22 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
     //setting seconds for test
-    const seconds= time.getSeconds();
+    const seconds = time.getSeconds();
 
 
-    if (hours === 22 && minutes === 27){
-      if(!messageHasBeenSent){
+    if (hours === 22 && minutes === 38) {
+      if (!messageHasBeenSent) {
         testChannel.send('Time for the daily meet!');
         messageHasBeenSent = true;
       }
-      
+
     }
   }
 
-setInterval(() => {
- getTime();
-}, 1000)
+  setInterval(() => {
+    getTime();
+  }, 1000)
 
 })
-  
+
 client.login(config.token);
