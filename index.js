@@ -36,4 +36,10 @@ client.on('ready', () => {
 
 })
 
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
 client.login(config.token);
