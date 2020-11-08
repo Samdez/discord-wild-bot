@@ -30,10 +30,10 @@ client.on('ready', () => {
     }
   }
 
-  setInterval(() => {
-    getTime();
-    testChannel.send('yaaaay')
-  }, 1000)
+  // setInterval(() => {
+  //   getTime();
+  //   testChannel.send('yaaaay')
+  // }, 1000)
 
 })
 
