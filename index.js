@@ -19,7 +19,7 @@ client.on('ready', () => {
 
     //setting seconds for test
     const seconds = time.getSeconds();
-
+    testChannel.send(seconds);
 
     if (hours === 23 && minutes === 19) {
       if (!messageHasBeenSent) {
