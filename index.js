@@ -22,13 +22,13 @@ client.on('ready', () => {
   const testChannel = client.channels.cache.get("775074059415060503");
 
   let messageHasBeenSent = false;
-
+  
   const getTime = () => {
     const time = new Date();
     const hours = time.getHours();
     const minutes = time.getMinutes();
 
-
+    testChannel.send('Heroku test');
     if (hours === 08 && minutes === 55) {
       if (!messageHasBeenSent) {
         wildChannel.send('Good morning Wilders!');
@@ -37,10 +37,10 @@ client.on('ready', () => {
         // testChannel.send(dailyPost);
       }
     }
-    if (hours === 19 && minutes === 30) {
+    if (hours === 20 && minutes === 00) {
       if (!messageHasBeenSent) {
-        testChannel.send('HAHAHA');
-        testChannel.send('FINALLY',   {files: ['https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXurBGvYU8Wzw-2e5hKpCl4amPAkQtmaWTTA&usqp=CAU']});
+        testChannel.send('timer test');
+        // testChannel.send('FINALLY', {files: ['https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXurBGvYU8Wzw-2e5hKpCl4amPAkQtmaWTTA&usqp=CAU']});
         // wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
         messageHasBeenSent = true;
       }
