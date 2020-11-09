@@ -17,11 +17,8 @@ client.on('ready', () => {
     const hours = time.getHours();
     const minutes = time.getMinutes();
 
-    //setting seconds for test
-    // const seconds = time.getSeconds();
-    // testChannel.send(seconds);
 
-    if (hours === 23 && minutes === 30) {
+    if (hours === 08 && minutes === 12) {
       if (!messageHasBeenSent) {
         testChannel.send('Time for the daily meet!');
         console.log('yay');
@@ -29,13 +26,21 @@ client.on('ready', () => {
       }
 
     }
+    if (hours === 17 && minutes === 00) {
+      messageHasBeenSent = false;
+    }
   }
 
   setInterval(() => {
     getTime();
   }, 1000)
 
-  console.log(messageHasBeenSent)
+  setInterval(() => {
+    messageHasBeenSent = false;
+  })
+
+  console.log(messageHasBeenSent);
+  console.log(new Date());
 })
 
 client.on('message', msg => {
