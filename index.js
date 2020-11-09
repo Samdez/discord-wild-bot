@@ -23,7 +23,6 @@ client.on('ready', () => {
 
   let messageHasBeenSent = false;
   
-  testChannel.send('Heroku test');
   const getTime = () => {
     const time = new Date();
     const hours = time.getHours();
