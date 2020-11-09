@@ -19,7 +19,7 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 09 && minutes === 19) {
+    if (hours === 09 && minutes === 25) {
       if (!messageHasBeenSent) {
         testChannel.send('Good morning!');
         messageHasBeenSent = true;
@@ -27,7 +27,7 @@ client.on('ready', () => {
         testChannel.send(dailyPost);
       }
     }
-    if (hours === 16 && minutes === 49) {
+    if (hours === 16 && minutes === 45) {
       if (!messageHasBeenSent) {
         testChannel.send('Time for the daily meet!');
         messageHasBeenSent = true;
