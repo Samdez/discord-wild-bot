@@ -23,12 +23,12 @@ client.on('ready', () => {
 
   let messageHasBeenSent = false;
   
+  testChannel.send('Heroku test');
   const getTime = () => {
     const time = new Date();
     const hours = time.getHours();
     const minutes = time.getMinutes();
 
-    testChannel.send('Heroku test');
     if (hours === 08 && minutes === 55) {
       if (!messageHasBeenSent) {
         wildChannel.send('Good morning Wilders!');
