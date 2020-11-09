@@ -18,10 +18,9 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 08 && minutes === 12) {
+    if (hours === 08 && minutes === 30) {
       if (!messageHasBeenSent) {
-        testChannel.send('Time for the daily meet!');
-        console.log('yay');
+        testChannel.send('Good morning ');
         messageHasBeenSent = true;
       }
 
