@@ -12,7 +12,8 @@ client.once('ready', () => {
 });
 
 client.on('ready', () => {
-  const testChannel = client.channels.cache.find(channel => channel.id === '689026385892999169');
+  const wildChannel = client.channels.cache.find(channel => channel.id === '689026385892999169');
+  const testChannel = client.channels.cache.find(channel => channel.id === '775074059415060503')
 
   let messageHasBeenSent = false;
 
@@ -30,7 +31,7 @@ client.on('ready', () => {
         // testChannel.send(dailyPost);
       }
     }
-    if (hours === 16 && minutes === 40) {
+    if (hours === 17 && minutes === 15) {
       if (!messageHasBeenSent) {
         testChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
         messageHasBeenSent = true;
