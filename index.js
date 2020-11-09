@@ -37,9 +37,11 @@ client.on('ready', () => {
         // testChannel.send(dailyPost);
       }
     }
-    if (hours === 16 && minutes === 40) {
+    if (hours === 19 && minutes === 30) {
       if (!messageHasBeenSent) {
-        wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
+        testChannel.send('HAHAHA');
+        testChannel.send('FINALLY',   {files: ['https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXurBGvYU8Wzw-2e5hKpCl4amPAkQtmaWTTA&usqp=CAU']});
+        // wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
         messageHasBeenSent = true;
       }
     }
