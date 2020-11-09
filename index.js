@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
+const request = require('./apiRequests');
 
 
 client.once('ready', () => {
@@ -18,10 +19,12 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 09 && minutes === 04) {
+    if (hours === 09 && minutes === 19) {
       if (!messageHasBeenSent) {
         testChannel.send('Good morning!');
         messageHasBeenSent = true;
+        const dailyPost = request.programmerHumorRequest();
+        testChannel.send(dailyPost);
       }
     }
     if (hours === 16 && minutes === 49) {
