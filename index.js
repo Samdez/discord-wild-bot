@@ -18,14 +18,19 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 08 && minutes === 30) {
+    if (hours === 09 && minutes === 04) {
       if (!messageHasBeenSent) {
-        testChannel.send('Good morning ');
+        testChannel.send('Good morning!');
         messageHasBeenSent = true;
       }
-
     }
-    if (hours === 17 && minutes === 00) {
+    if (hours === 16 && minutes === 49) {
+      if (!messageHasBeenSent) {
+        testChannel.send('Time for the daily meet!');
+        messageHasBeenSent = true;
+      }
+    }
+    if ((hours === 09 && minutes === 05) || (hours === 17 && minutes === 00)) {
       messageHasBeenSent = false;
     }
   }
@@ -34,11 +39,6 @@ client.on('ready', () => {
     getTime();
   }, 1000)
 
-  setInterval(() => {
-    messageHasBeenSent = false;
-  })
-
-  testChannel.send('aaalmost working')
 })
 
 client.on('message', msg => {
