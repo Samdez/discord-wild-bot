@@ -39,8 +39,7 @@ client.on('ready', () => {
     messageHasBeenSent = false;
   })
 
-  console.log(messageHasBeenSent);
-  console.log(new Date());
+  testChannel.send('aaalmost working')
 })
 
 client.on('message', msg => {
