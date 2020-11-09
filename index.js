@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const cron = require('node-cron');
 const client = new Discord.Client();
 // const config = require('./config');
 // const request = require('./apiRequests');
@@ -18,40 +19,44 @@ client.login(process.env.TOKEN);
 // });
 
 client.on('ready', () => {
-  const wildChannel = client.channels.cache.get('689026385892999169');
-  const testChannel = client.channels.cache.get("775074059415060503");
+  cron.schedule('22 25 * * *', () => {
+    const wildChannel = client.channels.cache.get('689026385892999169');
+    const testChannel = client.channels.cache.get("775074059415060503");
+    testChannel.send('timer test w/ heroku');
+  })
 
-  let messageHasBeenSent = false;
+  // let messageHasBeenSent = false;
   
-  const getTime = () => {
-    const time = new Date();
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
+  // testChannel.send('FINALLY', {files: ['./img/itWorks.jpg']});
+  // const getTime = () => {
+  //   const time = new Date();
+  //   const hours = time.getHours();
+  //   const minutes = time.getMinutes();
 
-    if (hours === 08 && minutes === 55) {
-      if (!messageHasBeenSent) {
-        wildChannel.send('Good morning Wilders!');
-        messageHasBeenSent = true;
-        // const dailyPost = request.programmerHumorRequest;
-        // testChannel.send(dailyPost);
-      }
-    }
-    if (hours === 20 && minutes === 00) {
-      if (!messageHasBeenSent) {
-        testChannel.send('timer test');
-        // testChannel.send('FINALLY', {files: ['https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXurBGvYU8Wzw-2e5hKpCl4amPAkQtmaWTTA&usqp=CAU']});
-        // wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
-        messageHasBeenSent = true;
-      }
-    }
-    if ((hours === 09 && minutes === 05) || (hours === 17 && minutes === 00)) {
-      messageHasBeenSent = false;
-    }
-  }
+  //   if (hours === 08 && minutes === 55) {
+  //     if (!messageHasBeenSent) {
+  //       wildChannel.send('Good morning Wilders!');
+  //       messageHasBeenSent = true;
+  //       // const dailyPost = request.programmerHumorRequest;
+  //       // testChannel.send(dailyPost);
+  //     }
+  //   }
+  //   if (hours === 20 && minutes === 00) {
+  //     if (!messageHasBeenSent) {
+  //       testChannel.send('timer test');
+  //       testChannel.send('FINALLY', {files: ['./img/itWorks.jpg']});
+  //       // wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
+  //       messageHasBeenSent = true;
+  //     }
+  //   }
+  //   if ((hours === 09 && minutes === 05) || (hours === 17 && minutes === 00)) {
+  //     messageHasBeenSent = false;
+  //   }
+  // }
 
-  setInterval(() => {
-    getTime();
-  }, 1000)
+  // setInterval(() => {
+  //   getTime();
+  // }, 1000)
 
 })
 
