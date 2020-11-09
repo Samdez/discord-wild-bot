@@ -3,17 +3,23 @@ const client = new Discord.Client();
 // const config = require('./config');
 // const request = require('./apiRequests');
 require('dotenv').config();
+client.login(process.env.TOKEN);
 // const keys = require('keys').config()
 
 
 
-client.once('ready', () => {
-  console.log('Ready!');
-});
+
+
+// client.once('ready', () => {
+  
+//   console.log(testChannel);
+//   console.log('Ready!');
+//   testChannel.send('HEYYY');
+// });
 
 client.on('ready', () => {
-  const wildChannel = client.channels.cache.find(channel => channel.id === '689026385892999169');
-  const testChannel = client.channels.cache.find(channel => channel.id === '775074059415060503')
+  const wildChannel = client.channels.cache.get('689026385892999169');
+  const testChannel = client.channels.cache.get("775074059415060503");
 
   let messageHasBeenSent = false;
 
@@ -23,17 +29,17 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 09 && minutes === 00) {
+    if (hours === 08 && minutes === 55) {
       if (!messageHasBeenSent) {
-        testChannel.send('Good morning!');
+        wildChannel.send('Good morning Wilders!');
         messageHasBeenSent = true;
         // const dailyPost = request.programmerHumorRequest;
         // testChannel.send(dailyPost);
       }
     }
-    if (hours === 17 && minutes === 15) {
+    if (hours === 16 && minutes === 40) {
       if (!messageHasBeenSent) {
-        testChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
+        wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
         messageHasBeenSent = true;
       }
     }
@@ -54,5 +60,4 @@ client.on('message', msg => {
   }
 });
 
-client.login(process.env.TOKEN);
 console.log(process.env.TOKEN)
