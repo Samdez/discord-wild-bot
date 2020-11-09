@@ -12,7 +12,7 @@ client.once('ready', () => {
 });
 
 client.on('ready', () => {
-  const testChannel = client.channels.cache.find(channel => channel.id === '775074059415060503');
+  const testChannel = client.channels.cache.find(channel => channel.id === '689026385892999169');
 
   let messageHasBeenSent = false;
 
