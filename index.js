@@ -19,10 +19,10 @@ client.login(process.env.TOKEN);
 // });
 
 client.on('ready', () => {
-  cron.schedule('* * * * *', () => {
+  cron.schedule('30 21 * * *', () => {
     const wildChannel = client.channels.cache.get('689026385892999169');
     const testChannel = client.channels.cache.get("775074059415060503");
-    testChannel.send('timer test w/ heroku');
+    testChannel.send('timer test on schedule w/ heroku');
   })
 
   // let messageHasBeenSent = false;
