@@ -23,7 +23,7 @@ client.on('ready', () => {
       if (!messageHasBeenSent) {
         testChannel.send('Good morning!');
         messageHasBeenSent = true;
-        const dailyPost = request.programmerHumorRequest();
+        const dailyPost = request.programmerHumorRequest;
         testChannel.send(dailyPost);
       }
     }
