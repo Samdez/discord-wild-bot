@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./config');
-const request = require('./apiRequests');
+// const config = require('./config');
+// const request = require('./apiRequests');
+require('dotenv').config();
+// const keys = require('keys').config()
+
 
 
 client.once('ready', () => {
@@ -19,17 +22,17 @@ client.on('ready', () => {
     const minutes = time.getMinutes();
 
 
-    if (hours === 09 && minutes === 25) {
+    if (hours === 09 && minutes === 00) {
       if (!messageHasBeenSent) {
         testChannel.send('Good morning!');
         messageHasBeenSent = true;
-        const dailyPost = request.programmerHumorRequest;
-        testChannel.send(dailyPost);
+        // const dailyPost = request.programmerHumorRequest;
+        // testChannel.send(dailyPost);
       }
     }
-    if (hours === 16 && minutes === 45) {
+    if (hours === 16 && minutes === 40) {
       if (!messageHasBeenSent) {
-        testChannel.send('Time for the daily meet!');
+        testChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
         messageHasBeenSent = true;
       }
     }
@@ -50,4 +53,5 @@ client.on('message', msg => {
   }
 });
 
-client.login(config.token);
+client.login(process.env.TOKEN);
+console.log(process.env.TOKEN)
