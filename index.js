@@ -21,12 +21,12 @@ client.on('ready', () => {
   const wildChannel = client.channels.cache.get('689026385892999169');
   const testChannel = client.channels.cache.get("775074059415060503");
   cron.schedule('*/29 * * * *', () => {
-    testChannel.send('29min msg')
+    testChannel.send('')
   } );
   // cron.schedule('*/5 * * * * *', () => {
   //   testChannel.send('5s schedule test')
   // });
-  cron.schedule('30 13 * * *',  () => {
+  cron.schedule('00 14 * * *',  () => {
     testChannel.send('FINALLY', {files: ['./img/itWorks.jpg']});
   })
   cron.schedule('45 15 * * *', () => {
