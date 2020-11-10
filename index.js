@@ -26,7 +26,7 @@ client.on('ready', () => {
   // cron.schedule('*/5 * * * * *', () => {
   //   testChannel.send('5s schedule test')
   // });
-  cron.schedule('00 10 * * *', () => {
+  cron.schedule('50 10 * * *', () => {
     testChannel.send('timer test on schedule w/ heroku');
   });
 
