@@ -26,8 +26,11 @@ client.on('ready', () => {
   // cron.schedule('*/5 * * * * *', () => {
   //   testChannel.send('5s schedule test')
   // });
-  cron.schedule('30 12 * * *', () => {
-    testChannel.send('timer test on schedule w/ heroku');
+  cron.schedule('30 13 * * *',  () => {
+    testChannel.send('FINALLY', {files: ['./img/itWorks.jpg']});
+  })
+  cron.schedule('45 15 * * *', () => {
+    wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
   });
 
   // let messageHasBeenSent = false;
