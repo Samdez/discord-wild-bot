@@ -23,8 +23,8 @@ client.on('ready', () => {
   cron.schedule('*/29 * * * *', () => {
     testChannel.send('')
   } );
-  cron.schedule('45 15 * * *',  () => {
-    wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye', {files: ['./img/itWorks.jpg']});
+  cron.schedule('45 15 * * 1-5',  () => {
+    wildChannel.send('Time for the daily meet! See you @ meet.google.com/gcq-hiur-nye');
   })
 })
 
