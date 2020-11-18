@@ -7,15 +7,11 @@ const client = new Discord.Client();
 
 const meetUrl = 'https://meet.google.com/gcq-hiur-nye';
 
-const rolesId = {
-  wilder: 691925283900489749,
-  trainer: 691925225805316118,
-  campusManager: 691940032449085440,
+const roles = {
+  wilder: { id: 691925283900489749, mention: '<@&691925283900489749>' },
+  trainer: { id: 691925225805316118, mention: '<@&691925225805316118>' },
+  campusManager: { id: 691940032449085440, mention: '<@&691940032449085440>' },
 };
-
-function mention(roleId) {
-  return `<@&${roleId}>`;
-}
 
 client.login(process.env.TOKEN);
 // const keys = require('keys').config()
@@ -34,6 +30,6 @@ client.on('ready', () => {
     testChannel.send('');
   });
   cron.schedule('45 15 * * 1-5', () => {
-    wildChannel.send(`<@&${mention(rolesId.wilder)}> Time for the daily meet!\n See you on ${meetUrl}`);
+    wildChannel.send(`${roles.wilder.mention} Time for the daily meet!\n See you on ${meetUrl}`);
   });
 });
