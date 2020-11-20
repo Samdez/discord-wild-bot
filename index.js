@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const cron = require('node-cron');
 const client = new Discord.Client();
-// const config = require('./config');
+const { prefix } = require('./config');
 // const request = require('./apiRequests');
 
 const meetUrl = 'https://meet.google.com/gcq-hiur-nye';
@@ -32,4 +32,10 @@ client.on('ready', () => {
   cron.schedule('45 15 * * 1-5', () => {
     wildChannel.send(`${roles.wilder.mention} Time for the daily meet!\n See you on ${meetUrl}`);
   });
+});
+
+client.on('message', (msg) => {
+  if (msg.content === `${prefix}meet`) {
+    msg.reply(meetUrl);
+  }
 });
